@@ -1,0 +1,8 @@
+export FLASK_APP="entrypoint:app"
+export APP_SETTINGS_MODULE="config.default"
+
+flask run --host 0.0.0.0 --port 8000 --debug
+
+flask --app entypoint:app db init
+flask --app entypoint:app db migrate -m "Initial_db"
+flask --app entypoint:app db upgrade
