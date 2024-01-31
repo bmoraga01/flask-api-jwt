@@ -7,6 +7,7 @@ from .common.error_handling import *
 
 # Importando los blueprints
 from .discount.routes import discount_bp
+from .auth.routes import auth_bp
 
 def create_app(settings_module):
     app = Flask(__name__)
@@ -22,6 +23,7 @@ def create_app(settings_module):
     
     # Registra los blueprints
     app.register_blueprint(discount_bp)
+    app.register_blueprint(auth_bp)
     
     # Registra manejadores de errores personalizados
     register_error_handlers(app)

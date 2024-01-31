@@ -6,3 +6,7 @@ flask run --host 0.0.0.0 --port 8000 --debug
 flask --app entypoint:app db init
 flask --app entypoint:app db migrate -m "Initial_db"
 flask --app entypoint:app db upgrade
+
+https://medium.com/analytics-vidhya/integrating-cognito-with-flask-e00010866054
+
+https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html
