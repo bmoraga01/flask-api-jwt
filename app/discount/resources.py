@@ -19,7 +19,7 @@ class DiscountTypeListResource(Resource):
         data = request.get_json()
         discountType_dict = discountType_schema.load(data)
         
-        discountType = DiscountType(msdt_id=discountType_dict['msdt_id'], msdt_desc=discountType_dict['msdt_desc'], msdt_active_status=discountType_dict['msdt_active_status'])
+        discountType = DiscountType(desc=discountType_dict['desc'], active_status=discountType_dict['active_status'])
         discountType.save()
         
         resp = discountType_schema.dump(discountType)
@@ -33,9 +33,10 @@ class DiscountListResource(Resource):
     
     def post(self):
         data = request.get_json()
+        print(data)
         discount_dict = discount_schema.load(data)
         
-        discount = Discount(msd_id=discount_dict['msd_id'], msd_msdt_id=discount_dict['msd_msdt_id'], msd_desc=discount_dict['msd_desc'], msd_nominal=discount_dict['msd_nominal'], msd_active_status=discount_dict['msd_active_status'])
+        discount = Discount(dt_id=discount_dict['dt_id'], desc=discount_dict['desc'], nominal=discount_dict['nominal'], active_status=discount_dict['active_status'])
         discount.save()
         
         result = discount_schema.dump(discount)
